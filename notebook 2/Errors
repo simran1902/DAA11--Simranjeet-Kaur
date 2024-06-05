@@ -1,0 +1,56 @@
+C:\Users\kaurs\AppData\Roaming\Python\Python312\site-packages\feets\extractors\ext_lomb_scargle.py:90: SyntaxWarning: invalid escape sequence '\P'
+  """
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+Cell In[10], line 1
+----> 1 import feets
+      2 # Load the data
+      3 data_in = pd.read_csv("_data/_TESS_lightcurves_outliercleaned/ACV/41259805_sector01_4_2_cleaned.lc", sep=',', names=['time', 'mag', 'magerr'])
+
+File ~\AppData\Roaming\Python\Python312\site-packages\feets\__init__.py:111
+    108 import os  # noqa
+    110 if os.getenv("FEETS_IN_SETUP") != "True":
+--> 111     from .core import *  # noqa
+    112     from .extractors import *  # noqa
+    114 del os
+
+File ~\AppData\Roaming\Python\Python312\site-packages\feets\core.py:53
+     49 import logging
+     51 import numpy as np
+---> 53 from . import extractors
+     54 from .extractors.core import (
+     55     DATA_MAGNITUDE,
+     56     DATA_TIME,
+   (...)
+     62     DATA_ALIGNED_ERROR,
+     63     DATA_ALIGNED_ERROR2)
+     66 # =============================================================================
+     67 # CONSTANTS
+     68 # =============================================================================
+
+File ~\AppData\Roaming\Python\Python312\site-packages\feets\extractors\__init__.py:148
+    146 from .ext_eta_e import *  # noqa
+    147 from .ext_flux_percentile_ratio import *  # noqa
+--> 148 from .ext_fourier_components import *  # noqa
+    149 from .ext_gskew import *  # noqa
+    150 from .ext_linear_trend import *  # noqa
+
+File ~\AppData\Roaming\Python\Python312\site-packages\feets\extractors\ext_fourier_components.py:49
+     45 import numpy as np
+     47 from scipy.optimize import curve_fit
+---> 49 from .ext_lomb_scargle import lscargle
+     50 from .core import Extractor
+     53 # =============================================================================
+     54 # EXTRACTOR CLASS
+     55 # =============================================================================
+
+File ~\AppData\Roaming\Python\Python312\site-packages\feets\extractors\ext_lomb_scargle.py:47
+     41 # =============================================================================
+     42 # IMPORTS
+     43 # =============================================================================
+     45 import numpy as np
+---> 47 from astropy.stats import lombscargle
+     49 from ..libs import ls_fap
+     51 from .core import Extractor
+
+ImportError: cannot import name 'lombscargle' from 'astropy.stats' (C:\Users\kaurs\AppData\Roaming\Python\Python312\site-packages\astropy\stats\__init__.py)
